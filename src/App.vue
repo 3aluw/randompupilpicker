@@ -1,8 +1,9 @@
 <template>
   <HelloWorld @NewArrCreator="newarrcreator"/>
-<div class="lists container" v-for="(list, index) in lists" :key="list.number" @click="listExtrcat(index)"> 
-  {{list.number}}
-</div>
+  <div class="lists-container">
+<div class="saved-list" v-for="(list, index) in lists" :key="list.number" @click="listExtrcat(index)"> 
+ {{list.number}}
+</div></div>
 <button @click="selector">Pick someone</button>
 <button @click="saver">Save List</button>
 <h1>{{pickedP}}</h1>
@@ -50,9 +51,9 @@ console.log(this.workingArr,this.lists[this.currentlist])
     if( this.workingArr.length === 0){
       this.workingArr = this.arr;  
     }
-  let pickedI = Math.floor(Math.random()*this.workingArr.length);
-  this.pickedP = this.names[this.workingArr[pickedI]]
-  this.workingArr.splice(pickedI,1);
+  let pickedN = Math.floor(Math.random()*this.workingArr.length);
+  this.pickedP = this.names[this.workingArr[pickedN]]
+  this.workingArr.splice(pickedN,1);
 console.log(this.lists[this.currentlist].arr);
 
 },
@@ -86,5 +87,20 @@ this.currentlist = this.lists.length-1;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.lists-container{
+  display: flex;
+  flex-direction: row;
+}
+.saved-list{
+  margin: 0.5rem;
+ min-height: 8rem;
+ min-width:10rem ;
+  border: 1px solid black;
+  padding: 10px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;  
 }
 </style>
