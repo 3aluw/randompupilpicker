@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld @NewArrCreator="newarrcreator"/>
+  <ListNameInsertFieldC @NewArrCreator="newarrcreator"/>
   <div class="lists-container">
 <div class="saved-list" v-for="(list, index) in lists" :key="list.number" @click="listExtrcat(index)"> 
  {{list.number}}
@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ListNameInsertFieldC from './components/ListNameInsertFieldC.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ListNameInsertFieldC
   },
 
   data(){
@@ -42,10 +42,10 @@ export default {
   methods:{
     listExtrcat(index){
 this.workingArr = this.lists[index].arr;
-this.currentlist = index;
+/*this.currentlist = index;
 this.listName = this.lists[index].number;
 console.log(this.workingArr,this.lists[this.currentlist])
-},
+*/},
  selector(){
   
     if( this.workingArr.length === 0){
