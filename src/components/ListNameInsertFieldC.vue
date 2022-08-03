@@ -17,6 +17,7 @@ NewlistName : ""
 methods:{
   ArrayCreator(){
     this.$emit("NewArrCreator", this.NewlistName);
+    this.NewlistName = '';
   }
 }
 }
