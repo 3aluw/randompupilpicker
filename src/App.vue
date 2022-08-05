@@ -7,6 +7,7 @@
 <button @click="studentSelector">Pick someone</button>
 <button @click="saver">Save List</button>
 <h1>{{pickedP}}</h1>
+<h2>reamaining students : {{currentObj.arr.length}}</h2>
 </template>
 
 <script>
@@ -40,6 +41,9 @@ export default {
     
     }
   },
+   beforeMount() {
+   if(this.currentObj.number === null){ this.currentObj = this.lists[0]}
+  },
   methods:{
     listExtrcat(index){
 this.currentObj.number = this.lists[index].number;
@@ -49,16 +53,18 @@ console.log(this.currentObj)
 },
  studentSelector(){
 
-  if(this.currentObj.number === null){ this.currentObj = this.lists[0]}
+
 
   let pickedN = Math.floor(Math.random()*this.currentObj.arr.length);
   this.pickedP = this.names[this.currentObj.arr[pickedN]]
   this.currentObj.arr.splice(pickedN,1);
 
     if( this.currentObj.arr.length === 0){
-      this.currentObj.arr = this.arr;  
+      this.currentObj.arr = [...this.arr];
+      console.log(this.arr)
+      
     }
-console.log(this.lists[0])
+
 },
 saver(){
   this.lists.splice(this.currentObjIndex ,1,this.currentObj);
@@ -88,6 +94,9 @@ newarrcreator(name){
   color: #2c3e50;
   margin-top: 60px;
 }
+h1{
+      height: 2rem;
+}
 .lists-container{
   display: flex;
   flex-direction: row;
@@ -102,5 +111,7 @@ newarrcreator(name){
   justify-content: center;
   align-items: center;
   cursor: pointer;  
+  color: #845EC2;
+  font-size: 3rem;
 }
 </style>
