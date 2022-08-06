@@ -97,10 +97,34 @@ newarrcreator(name){
 h1{
       height: 2rem;
 }
+button{
+  background: #B39CD0;
+  border: 2px solid #B39CD0;
+  color: black;
+  font-size: 1rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  border-radius: 3px;
+  margin: 1rem;
+  padding: .5rem;
+  cursor: pointer;
+  min-width: 10vw;
+  min-height: 3vh;
+}
+button:hover{
+  background: none;
+  color: black;
+}
+input{
+  min-width: 50vw;
+  min-height: 10vh;
+  font-size: 3rem;
+  text-align: center;
+}
 .lists-container{
   display: flex;
   flex-direction: row;
 }
+
 .saved-list{
   margin: 0.5rem;
  min-height: 8rem;

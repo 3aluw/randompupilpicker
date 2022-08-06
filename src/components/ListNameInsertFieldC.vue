@@ -1,6 +1,6 @@
 <template>
  <div class="container">
-<input type="text" v-model="NewlistName">
+<input type="text" v-model="NewlistName"> <br>
 <button @click="ArrayCreator"> Create a new array </button>
  </div>
 </template>
@@ -38,5 +38,10 @@ li {
 }
 a {
   color: #42b983;
+}
+button{
+  min-width: 20vw;
+  min-height: 4vh;
+  
 }
 </style>
